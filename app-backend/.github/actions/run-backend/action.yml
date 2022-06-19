@@ -3,5 +3,5 @@ description: Setup and run the backend
 runs:
   using: composite
   steps:
-    - run: echo "No run configuration for Backend specified"
+    - run: yarn install
       shell: bash
