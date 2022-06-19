@@ -80,4 +80,8 @@ app.post('/api/dump', (req, res) => {
   return res.send(messageKeys);
 });
 
+app.get('/', (_, res) => {
+  res.status(200).end();
+})
+
 app.listen(8000, () => console.log('Sample app backend listening'));
