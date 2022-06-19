@@ -230,11 +230,11 @@ function generateShape(shape, parentIdxForShape = null, path = []) {
   }), {});
 }
 
-function uploadDump({ dump, dumpIsTemplate, upload: { url, method } }) {
+function uploadDump({ dump, dumpIsTemplate, dumpUploadUrl, dumpUploadMethod }) {
   const data = dumpIsTemplate
     ? [...Array(generateRandomNum(100, 800))].map((_, idx) => generateShape(dump, idx))
     : dump;
-  cy.request(method, url, data).its('body').as('dumpKeys');
+  cy.request(dumpUploadMethod, dumpUploadUrl, data).its('body').as('dumpKeys');
   return data;
 }
 
