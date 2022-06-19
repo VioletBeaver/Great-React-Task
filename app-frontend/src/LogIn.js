@@ -27,7 +27,7 @@ function LogIn() {
             axios.defaults.headers.Authorization = `Token ${data.token}`;
             saveCredentials(data.token);
           })
-          // .catch(console.log)
+          .catch(console.log)
         }
       >
         Log In
