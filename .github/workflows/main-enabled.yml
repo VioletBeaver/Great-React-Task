@@ -48,5 +48,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-reports
-          path: reports
+          path: test-engine/reports
           if-no-files-found: ignore
