@@ -1,0 +1,15 @@
+{
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "baseUrl": "http://localhost:3000",
+  "experimentalSessionAndOrigin": true,
+  "chromeWebSecurity": false,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "reports",
+    "reportFilename": "main",
+    "overwrite": true,
+    "html": false,
+    "json": true
+  }
+}
