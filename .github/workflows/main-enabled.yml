@@ -24,20 +24,12 @@ jobs:
         working-directory: email-server
         run: yarn install
 
-      - name: Run email server
-        working-directory: email-server
-        run: yarn serve
-
-      - name: Run backend
+      - name: Setup backend
         uses: ./app-backend/.github/actions/run-backend
 
       - name: Install frontend dependencies
         working-directory: app-frontend
         run: yarn install
-
-      - name: Run frontend
-        working-directory: app-frontend
-        run: yarn start
 
       - name: Install test dependencies
         working-directory: test-engine

@@ -2,7 +2,12 @@
   "name": "layout-task",
   "packageManager": "yarn@3.2.0",
   "scripts": {
-    "test": "cypress run",
+    "start:email": "node ../email-server/email.js",
+    "start:email:static": "node ../email-server/static.js",
+    "start:backend": "../app-backend/run_backend.sh",
+    "start:frontend": "yarn --cwd ../app-frontend start",
+    "test:run": "cypress run",
+    "test": "start-test start:email 5050 start:email:static 5051 start:backend 8000 start:frontend 3000 test:run",
     "test:dev": "cypress run --config-file cypress.dev.json"
   },
   "dependencies": {
@@ -10,6 +15,7 @@
     "generate-password": "^1.7.0",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
-    "moment": "^2.29.3"
+    "moment": "^2.29.3",
+    "start-server-and-test": "^1.14.0"
   }
 }

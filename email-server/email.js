@@ -1,5 +1,4 @@
 const { SMTPServer } = require('smtp-server');
-const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const { simpleParser } = require('mailparser');
@@ -22,18 +21,10 @@ const emailServer = new SMTPServer({
   )
 });
 
+process.on('SIGINT', () => emailServer.close(() => {
+  console.log('SMTP server closed');
+  process.exit(0);
+}));
+emailServer.listen(5050, () => console.log('SMTP server is up'));
 
 
-
-const staticServer = express();
-staticServer.use('/last_email', express.static(LAST_EMAIL));
-staticServer.listen(5051, () => {
-  console.log('Static server is up');
-
-  process.on('SIGINT', () => emailServer.close(() => {
-    console.log('SMTP server closed');
-    process.exit(0);
-  }));
-
-  emailServer.listen(5050, () => console.log('SMTP server is up'));
-});

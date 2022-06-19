@@ -3,5 +3,5 @@ description: Setup and run the backend
 runs:
   using: composite
   steps:
-    - run: node ${{ github.action_path }}/index.js
+    - run: echo "No run configuration for Backend specified"
       shell: bash
