@@ -42,6 +42,7 @@ jobs:
       - name: Run tests
         working-directory: test-engine
         run: yarn test
+        continue-on-error: true
 
       - name: Archive test reports
         uses: actions/upload-artifact@v3
