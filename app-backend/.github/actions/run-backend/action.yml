@@ -5,3 +5,4 @@ runs:
   steps:
     - run: yarn install
       shell: bash
+      working-directory: app-backend
