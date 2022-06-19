@@ -7,7 +7,7 @@
     "start:backend": "../app-backend/run_backend.sh",
     "start:frontend": "yarn --cwd ../app-frontend start",
     "test:run": "cypress run",
-    "test": "start-test start:email 5050 start:email:static 5051 start:backend 8000 start:frontend 3000 test:run",
+    "test": "start-test start:backend 8000 start:frontend 3000 test:run",
     "test:dev": "cypress run --config-file cypress.dev.json"
   },
   "dependencies": {
