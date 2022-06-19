@@ -35,6 +35,10 @@ jobs:
         working-directory: test-engine
         run: yarn install
 
+      - name: Providre exec permissions
+        working-directory: app-backend
+        run: chmod +x run_backend.sh
+
       - name: Run tests
         working-directory: test-engine
         run: yarn test
