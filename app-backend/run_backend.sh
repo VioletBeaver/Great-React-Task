@@ -1,1 +1,2 @@
-node ../app-backend/index.js
+BACKEND_DIR="$1"
+node "$BACKEND_DIR"/index.js
