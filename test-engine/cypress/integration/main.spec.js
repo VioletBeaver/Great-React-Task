@@ -232,7 +232,7 @@ function generateShape(shape, parentIdxForShape = null, path = []) {
 
 function uploadDump({ dump, dumpIsTemplate, dumpUploadUrl, dumpUploadMethod }) {
   const data = dumpIsTemplate
-    ? [...Array(generateRandomNum(100, 800))].map((_, idx) => generateShape(dump, idx))
+    ? [...Array(generateRandomNum(100, 800))].map((_, idx) => generateShape(JSON.parse(dump), idx))
     : dump;
   cy.request(dumpUploadMethod, dumpUploadUrl, data).its('body').as('dumpKeys');
   return data;
