@@ -71,6 +71,7 @@ app.get('/api/users', (req, res) => {
 })
 
 app.post('/api/dump', (req, res) => {
+  console.log(req.body.slice(0, 15));
   const messageKeys = req.body.map(({ topic, author: { username }, chatName, text, sentAt }) => {
     chats[nextChatId++] = { name: chatName };
     users[nextUserId++] = { username, email: `${username}@gmail.com`, password: `${username}--123-pwd` };
