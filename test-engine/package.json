@@ -6,7 +6,7 @@
     "start:email:static": "node ../email-server/static.js",
     "start:backend": "../app-backend/run_backend.sh ../app-backend",
     "start:frontend": "yarn --cwd ../app-frontend start",
-    "start:all": "yarn start:email && yarn start:email:static && yarn start:backend && yarn start:frontend",
+    "start:all": "yarn start:email & yarn start:email:static & yarn start:backend & yarn start:frontend",
     "test:run": "cypress run",
     "test": "start-test start:all 3000 test:run",
     "test:dev": "cypress run --config-file cypress.dev.json"
